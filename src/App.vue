@@ -63,6 +63,9 @@
       viewInvestments() {
         router.push('/investment-list');
       },
+      viewStocks() {
+        router.push('/stock-list');
+      },
 
      login() {
         router.push("/auth");
