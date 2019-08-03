@@ -52,13 +52,12 @@
 
         <template slot="items" slot-scope="props" >
           <td>{{ props.item.customer }}</td>
-          <td nowrap="true">{{ props.item.category }}</td>
-          <td nowrap="true">{{ props.item.description }}</td>
-          <td nowrap="true">{{ props.item.acquired_value }}</td>
-          <td nowrap="true">{{ props.item.acquired_date }}</td>
-          <td nowrap="true">{{ props.item.recent_value }}</td>
-          <td nowrap="true">{{ props.item.recent_date }}</td>
-          <td nowrap="true">
+          <td nowrap="true">{{ props.item.symbol }}</td>
+          <td nowrap="true">{{ props.item.name }}</td>
+          <td nowrap="true">{{ props.item.shares }}</td>
+          <td nowrap="true">{{ props.item.purchase_price }}</td>
+          <td nowrap="true">{{ props.item.purchase_date }}</td>
+         <td nowrap="true">
             <v-icon @click="updateStock(props.item)">edit</v-icon>
           </td>
           <td nowrap="true">
@@ -80,11 +79,9 @@
 
 
 <script>
-
   import router from '../router';
   import {APIService} from '../http/APIService';
   const apiService = new APIService();
-
   export default {
     name: "StockList",
     data: () => ({
@@ -95,20 +92,17 @@
       headers: [
 
         {text: 'Customer', sortable: false, align: 'left',},
-        {text: 'Category', sortable: false, align: 'left',},
-        {text: 'Description', sortable: false, align: 'left',},
-        {text: 'Acquired_Value', sortable: false, align: 'left',},
-        {text: 'Acquired_Date', sortable: false, align: 'left',},
-        {text: 'Recent_Value', sortable: false, align: 'left',},
-        {text: 'Recent_Date', sortable: false, align: 'left',},
+        {text: 'Symbol', sortable: false, align: 'left',},
+        {text: 'Name', sortable: false, align: 'left',},
+        {text: 'Share', sortable: false, align: 'left',},
+        {text: 'Purchase_Price', sortable: false, align: 'left',},
+        {text: 'Purchase_Date', sortable: false, align: 'left',},
         {text: 'Update', sortable: false, align: 'left',},
         {text: 'Delete', sortable: false, align: 'left',}
-
       ],
-
     }),
     mounted() {
-      this.getstocks();
+      this.getStocks();
       this.showMessages();
     },
     methods: {

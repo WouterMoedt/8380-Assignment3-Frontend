@@ -1,6 +1,6 @@
-# efs_vue
+# efs-wouter-frontend
 
-> UI for EFS portfolio project
+> UI for EFS portfolio
 
 ## Build Setup
 

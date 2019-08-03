@@ -28,6 +28,13 @@
               <v-container>
 
                 <v-text-field
+                  v-model="customer.pk"
+                  label="Customer ID"
+                  required
+                  type="number"
+                />
+
+                <v-text-field
                   v-model="customer.cust_number"
                   label="Customer Number"
                   required

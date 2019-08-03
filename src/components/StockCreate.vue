@@ -35,40 +35,35 @@
                 />
 
                 <v-text-field
-                  v-model="stock.category"
-                  label="Category"
+                  v-model="stock.symbol"
+                  label="Symbol"
                   required
                 />
                 <v-text-field
-                  v-model="stock.description"
-                  label="Description"
+                  v-model="stock.name"
+                  label="Name"
                   required
                 />
                 <v-text-field
-                  v-model="stock.acquired_value"
-                  label="Acquired Value"
+                  v-model="stock.shares"
+                  label="Shares"
                   required
                   type="number"
                 />
                 <v-text-field
-                  v-model="stock.acquired_date"
-                  label="Acquired_date"
+                  v-model="stock.purchase_price"
+                  label="Purchase Price"
                   required
-                  type="date"
+                   type="number"
 
                 />
                 <v-text-field
-                  v-model="stock.recent_value"
-                  label="Recent Value"
-                  required
-                  type="number"
-                />
-                <v-text-field
-                  v-model="stock.recent_date"
-                  label="Recent Date"
+                  v-model="stock.purchase_date"
+                  label="Purchase Date"
                   required
                   type="date"
                 />
+
 
               </v-container>
               <v-btn v-if="!isUpdate" class="blue white--text" @click="createStock">Save</v-btn>
@@ -89,7 +84,6 @@
   import router from '../router';
   import {APIService} from '../http/APIService';
   const apiService = new APIService();
-
   export default {
     name: 'StockCreate',
     components: {},

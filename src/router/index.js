@@ -41,7 +41,6 @@ export default new Router({
       name: 'CustomerUpdate',
       component: CustomerCreate
     },
-
     {
       path: '/investment-list',
       name: 'InvestmentList',
@@ -63,12 +62,12 @@ export default new Router({
       component: InvestmentCreate
     },
 
-    {
+ {
       path: '/stock-list',
       name: 'StockList',
       component: StockList
     },
-    {
+{
       path: '/stock-list/:msg',
       name: 'StockUpdatedList',
       component: StockList
@@ -83,8 +82,7 @@ export default new Router({
       name: 'StockUpdate',
       component: StockCreate
     },
-
-    {
+      {
       path: '/auth',
       name: 'Auth',
       component: Auth

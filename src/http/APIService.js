@@ -1,11 +1,11 @@
 /* eslint-disable */
 import axios from 'axios';
-const API_URL = 'http://efs-wouter-backend.herokuapp.com/'; /* or http://localhost:8080 */
+const API_URL = 'https://groyce.pythonanywhere.com/'; /* https://efs-wouter-backend.herokuapp.com/  or  http://localhost:8080 */
 
 export class APIService {
   constructor() {
 
-  }
+    }
 
    getCustomer(param_pk) {
      const url = `${API_URL}/api/customers/${param_pk}`;
@@ -45,8 +45,7 @@ export class APIService {
      return axios.delete(url, {headers: headers});
   }
 
-
-  getInvestment(param_pk) {
+   getInvestment(param_pk) {
      const url = `${API_URL}/api/investments/${param_pk}`;
      let jwtToken = localStorage.getItem('token');
      console.log(":::jwtToken:::::"+jwtToken);
@@ -64,7 +63,7 @@ export class APIService {
 
    }
 
-   addNewInvestment(investment){
+    addNewInvestment(investment){
    const url = `${API_URL}/api/investments/`;
    let jwtToken = localStorage.getItem('token');
    const headers = {Authorization: `jwt ${jwtToken}`};
@@ -85,8 +84,7 @@ export class APIService {
      return axios.delete(url, {headers: headers});
   }
 
-
-    getStock(param_pk) {
+   getStock(param_pk) {
      const url = `${API_URL}/api/stocks/${param_pk}`;
      let jwtToken = localStorage.getItem('token');
      console.log(":::jwtToken:::::"+jwtToken);
@@ -124,7 +122,6 @@ export class APIService {
      const headers = {Authorization: `jwt ${jwtToken}`};
      return axios.delete(url, {headers: headers});
   }
-
   authenticateLogin(credentials) {
     const url = `${API_URL}/auth/`;
     return axios.post(url, credentials);
